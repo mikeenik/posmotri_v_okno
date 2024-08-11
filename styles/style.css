@@ -53,7 +53,7 @@ ol {
   display: grid;
   grid-template-columns: auto 399px;
   gap: 30px;
-  padding: 200px 30px;
+  padding: 230px 30px;
   margin: auto;
 }
 
