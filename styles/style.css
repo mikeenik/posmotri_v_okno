@@ -16,6 +16,7 @@ html {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
   justify-content: center;
 }
 
@@ -49,7 +50,6 @@ ol {
 }
 
 .content {
-  position: center;
   display: grid;
   grid-template-columns: auto 399px;
   gap: 30px;
@@ -89,7 +89,7 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed";
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -101,8 +101,11 @@ ol {
 
 .button {
   color: inherit;
-  font-family: inherit;
-  font-size: inherit;
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  text-align: center;
   background-color: transparent;
   border: 1px solid rgb(255, 255, 255);
   width: 194px;
@@ -182,12 +185,6 @@ ol {
   opacity: 20%;
 }
 
-.content__list {
-  max-height: 300px;
-  overflow: auto;
-  position: relative;
-}
-
 .content__list-item:not(:last-child) {
   margin-bottom: 30px;
 }
@@ -202,10 +199,11 @@ ol {
   display: grid;
   grid-template-columns: auto auto;
   place-content: start space-between;
+  padding: 2px;
 }
 
 .content__video-card-description-container {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed";
   font-size: 18px;
   font-weight: 400;
   line-height: 16.2px;
@@ -214,12 +212,16 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
   text-align: left;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 192px;
 }
 
 .content__video-card-thumbnail {
@@ -234,7 +236,7 @@ ol {
 }
 
 .button:active,
-.content__video-card:active {
+.content__card-link:active {
   background-color: rgba(84, 80, 80, 1);
 }
 
@@ -248,18 +250,29 @@ ol {
 }
 
 .button:hover,
-.search-form__label-text:hover,
 .content__video-card:hover {
   text-decoration: underline;
 }
 
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__fieldset-title:hover {
+  cursor: default;
+}
+
+.content__video-card:focus,
 .button:focus {
   outline-offset: 1px;
   outline: 1px solid rgb(255, 255, 255);
 }
 
-.search-form__label:focus,
-.content__video-card:focus {
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
   outline-offset: 1px;
   outline: 1px solid rgb(255, 255, 255);
 }
