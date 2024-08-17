@@ -189,6 +189,10 @@ ol {
   margin-bottom: 30px;
 }
 
+.content__list-item {
+  margin: 2px;
+}
+
 .content__card-link {
   color: inherit;
   text-decoration: none;
@@ -235,8 +239,12 @@ ol {
   cursor: pointer;
 }
 
+.content__card-link_current {
+  background-color: rgba(84, 80, 80, 1);
+}
+
 .button:active,
-.content__card-link_current:active {
+.content__card-link:active {
   background-color: rgba(84, 80, 80, 1);
 }
 
@@ -278,10 +286,9 @@ ol {
 .content__list-item:has(:focus-visible) {
   outline-offset: 1px;
   outline: 1px solid rgb(255, 255, 255);
-  margin: 2px;
 }
 
 .search-form__label:has(:focus-visible) {
-  outline-offset: 1px;
+  outline-offset: 5px;
   outline: 1px solid rgb(255, 255, 255);
 }
